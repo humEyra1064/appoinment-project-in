@@ -27,7 +27,7 @@ export const doctorData = [
     id: 1,
     name: "Dr.Hazel Valery",
     dep: "Cardiology",
-    img: "./img/dr1.jpg",
+    img: "https://i.cnnturk.com/i/cnnturk/75/0x555/54857220f97adb1aa472e5e6",
   },
   {
     id: 2,

@@ -3,7 +3,7 @@ import { Col, Row } from "react-bootstrap"
 import Container from "react-bootstrap/Container"
 import { AddModal } from "./AddModal"
 
-const Doctors = ({doctors}) => {
+const Doctors = ({doctors,appointment,setappointment}) => {
   const [show, setShow] = useState(false);
   const [selectedDrName, setSelectedDrName] = useState();
 
