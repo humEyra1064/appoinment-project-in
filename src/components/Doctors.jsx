@@ -5,11 +5,13 @@ import { AddModal } from "./AddModal"
 
 const Doctors = ({doctors}) => {
   const [show, setShow] = useState(false);
+  const [selectedDrName, setSelectedDrName] = useState();
 
   // const handleClose = () => setShow(false);
   // const handleShow = () => setShow(true);
-  const handleClick=()=>{
+  const handleClick=(drName)=>{
     setShow(true)
+    setSelectedDrName(drName)
   }
   return (
     <Container className="p-2">
@@ -19,7 +21,7 @@ const Doctors = ({doctors}) => {
         {doctors.map((dr)=>(
            <Col key={dr.id} xs={6} sm={4} md={3} >
        <img src={dr.img} className="img-thumbnail doctor-img"
-       onClick={handleClick}
+       onClick={()=>handleClick(dr.name)}
        />
        <h5>{dr.name}</h5>
        <h6>{dr.dep}</h6>
@@ -27,7 +29,7 @@ const Doctors = ({doctors}) => {
         ))}
        
       </Row>
-      <AddModal show={show} handleClose={()=>setShow(false)}/>
+      <AddModal show={show} handleClose={()=>setShow(false)} drNames={selectedDrName}/>
     </Container>
   )
 }
